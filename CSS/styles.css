@@ -43,7 +43,7 @@ body {
 /* SPECIFIC CARDS */
 #daniel__card {
   color: var(--light-grayish-blue);
-  background: url(/images/bg-pattern-quotation.svg) no-repeat,
+  background: url(../images/bg-pattern-quotation.svg) no-repeat,
     var(--moderate-violet);
   background-position-x: 90%;
   background-size: 102px 106px;
