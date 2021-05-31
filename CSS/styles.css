@@ -1,11 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap");
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 :root {
   /* COLORS */
   /* Primary */
@@ -18,31 +12,39 @@
   --light-grayish-blue: hsl(210, 46%, 95%);
 }
 
+/* GENERAL */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   font-size: 13px;
   font-family: "Barlow Semi Condensed", sans-serif;
   background: var(--light-grayish-blue);
 }
+/*-----------------*/
 
 .grid__container {
   display: grid;
   margin: 50px auto;
   width: 85%;
-  gap: 2em;
+  row-gap: 2em;
+  column-gap: 2.5em;
 }
 
 .card {
   border-radius: 10px;
-  padding: 2.2em 2.6em;
+  padding: 1.5em 2.6em;
   background-color: var(--white);
 }
 
 /* SPECIFIC CARDS */
 #daniel__card {
   color: var(--light-grayish-blue);
-  background-image: url("/images/bg-pattern-quotation.svg");
-  background-color: var(--moderate-violet);
-  background-repeat: no-repeat;
+  background: url(/images/bg-pattern-quotation.svg) no-repeat,
+    var(--moderate-violet);
   background-position-x: 90%;
   background-size: 102px 106px;
 }
@@ -61,6 +63,7 @@ body {
 #patrick__card .author__picture {
   border: 2px solid #a775f1;
 }
+/*-----------------*/
 
 .card__author {
   display: flex;
@@ -91,4 +94,36 @@ body {
 .card__text {
   opacity: 60%;
   line-height: 1.5em;
+}
+
+/* MEDIA QUERIES */
+@media only screen and (min-width: 870px) {
+  .grid__container {
+    margin: 8em auto;
+    width: 80%;
+    grid-template-areas:
+      "daniel daniel daniel jonathan kira"
+      "jeanette patrick patrick patrick kira";
+  }
+
+  #daniel__card {
+    background-position-x: 80%;
+    grid-area: daniel;
+  }
+
+  #jonathan__card {
+    grid-area: jonathan;
+  }
+
+  #jeanette__card {
+    grid-area: jeanette;
+  }
+
+  #patrick__card {
+    grid-area: patrick;
+  }
+
+  #kira__card {
+    grid-area: kira;
+  }
 }
